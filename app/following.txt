@@ -1,0 +1,12 @@
+apple
+tesla
+microsoft
+nvidia
+amazon
+crypto
+google
+sp500
+nasdaq
+amd
+facebook
+nasdaq
