@@ -26,7 +26,7 @@ app.include_router(command.router)
 def health_check():
     return {'message': 'healthy'}
 
-if __name__ == '__main__':
-    uvicorn.run("index:app", host = 'localhost', port = PORT, reload = True)
+# if __name__ == '__main__':
+#     uvicorn.run("index:app", host = '0.0.0.0', port = PORT, reload = True)
 
 
