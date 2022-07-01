@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 class NewsDb():
     def __init__(self):
         root = pathlib.Path(__file__).parent.parent
-        self.dotenv_path = os.path.join(root, 'dotenv')
+        self.dotenv_path = os.path.join(root, '.env')
         load_dotenv(self.dotenv_path)
         self.admin_username = os.getenv("ADMIN_USERNAME")
         self.admin_password = os.getenv("ADMIN_PASSWORD")
