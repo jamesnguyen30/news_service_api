@@ -6,6 +6,7 @@ import pandas as pd
 import pathlib
 import os
 from dotenv import load_dotenv
+import re
 
 class NewsDb():
     def __init__(self):
@@ -98,7 +99,13 @@ class NewsDb():
         @return
             list 
         '''
-        news = News.objects(search_term = search_term).all().order_by('-date')
+        search_term = search_term.lower()
+        search_term = search_term.replace("inc", "")
+        search_term = search_term.replace("com", "")
+        search_term = search_term.strip()
+        
+        regex = re.compile(f".*{search_term}.*")
+        news = News.objects(search_term = regex).all().order_by('-date')
         
         return news
 

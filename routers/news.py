@@ -74,7 +74,7 @@ async def get_by_term(term: str, limit: int = 10, page: int = 0):
             total += len(result)
         total = len(all_news_objs) 
         if len(all_news_objs) == 0:
-            return response.generate_body(200, messge = 'term does not exist')
+            return response.generate_body(200, message = 'term does not exist')
         return response.generate_body(200, total = total, data = all_news_objs)
     except Exception as e:
         traceback.print_exc()
